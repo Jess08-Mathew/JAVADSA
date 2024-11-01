@@ -13,8 +13,7 @@ To use the program, set the static array numbers with your desired integers and 
 Example
 Given the input array {7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9} and K = 4, the output will be 5 11 7 10, reflecting their frequencies.</p>
   <h1>Share Trader<h1>
-  <p>
-Explanation of the Code
+<p>Explanation of the Code
 Class and Static Variables:
 
 The class is named ShareTrader.
