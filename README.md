@@ -19,5 +19,8 @@ The Employee Payroll System is a Java application designed to manage various emp
 - **Annual Earnings**: Calculates and displays annual earnings for each employee.
 - **Total Payroll Tracking**: Maintains a comprehensive overview of the total payroll.
 
-## Classes
-- **Employee**: Base class with common attributes and methods for all employees.</p>
+- ## Classes
+- **Employee**: Base class with common attributes and methods for all employees.
+- **HourlyEmployee**: Inherits from Employee, adding attributes and methods specific to hourly employees.
+- **SalariedEmployee**: Inherits from Employee, adding attributes and methods specific to salaried employees.
+- **ExecutiveEmployee**: Inherits from SalariedEmployee, adding additional functionality for executives.</p>
