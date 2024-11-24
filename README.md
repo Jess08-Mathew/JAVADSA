@@ -1,69 +1,48 @@
-<h1>Top K Frequency</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-<h2>Frequency Analyzer</h2>
-<p>The <strong>Frequency Analyzer</strong> is a Java program that analyzes an array of integers to identify the top K numbers with the highest occurrences. It prioritizes numbers based on frequency and, in the case of ties, selects the larger number. Results are presented in descending order of frequency.</p>
+<h1>Robber Strategy Simulator in Java</h1>
 
-<h3>Features</h3>
+<p>This project demonstrates an inheritance-based design in Java to simulate different robbery strategies for maximizing the amount of money a robber can steal from various types of houses while avoiding security alarms. It includes an abstract <code>Robber</code> class and a derived class <code>JAVAProfessionalRobber</code> with methods using dynamic programming to solve different robbery constraints.</p>
+
+<h2>Project Structure</h2>
 <ul>
-  <li><strong>Static Variable</strong>: Stores the input array of integers.</li>
-  <li><strong>Static Method</strong>: Implements frequency analysis and sorting logic to determine the top K numbers.</li>
-  <li><strong>Sorting Logic</strong>: Ensures numbers are sorted by frequency first, then by value in descending order.</li>
-</ul>
-
-<h3>Usage</h3>
-<ol>
-  <li>Set the static array <code>numbers</code> with your desired integers.</li>
-  <li>Call the <code>findTopKFrequentNumbers(K)</code> method with a positive integer K to retrieve the top K frequent numbers.</li>
-</ol>
-
-<h3>Example</h3>
-<p>For the array <code>{7, 10, 11, 5, 2, 5, 5, 7, 11, 8, 9}</code> with <code>K = 4</code>, the output will be:</p>
-<pre><code>5 11 7 10</code></pre>
-
-<hr>
-
-<h1>Share Trader</h1>
-
-<h2>Explanation of the Code</h2>
-
-<h3>Class and Static Variables</h3>
-<ul>
-  <li>The class is named <strong>ShareTrader</strong>.</li>
-  <li><code>maxProfit</code>: A static variable holding the maximum profit from transactions.</li>
-</ul>
-
-<h3>Method <code>findMaxProfit</code></h3>
-<ul>
-  <li><strong>Input</strong>: An array of stock prices.</li>
-  <li><strong>Logic</strong>: Initializes four variables to track profits and updates them based on buying low and selling high for two transactions.</li>
-  <li><strong>Output</strong>: Prints the maximum achievable profit with up to two transactions.</li>
-</ul>
-
-<h3>Test Cases</h3>
-<p>Several test cases in the <code>main</code> method demonstrate the functionality, showcasing profit calculation for different price arrays.</p>
-
-<h3>Conclusion</h3>
-<p>This code efficiently calculates the maximum achievable profit with two transactions, ensuring the second transaction can only occur after the first.</p>
-
-<hr>
-
-<h1>Employee Payroll System</h1>
-
-<h2>Overview</h2>
-<p>The <strong>Employee Payroll System</strong> is a Java application designed to manage different employee roles and their payroll within CHRIST (Deemed to be University). It efficiently handles salary calculation, bonus computation, and total payroll tracking for various employee types.</p>
-
-<h3>Features</h3>
-<ul>
-  <li><strong>Employee Types</strong>: Supports Hourly, Salaried, and Executive Employees.</li>
-  <li><strong>Salary Calculation</strong>:
+  <li><strong>Abstract Class <code>Robber</code></strong>: Contains abstract methods for different robbery strategies, along with:
     <ul>
-      <li>Weekly earnings for Hourly Employees are based on hourly rate and hours worked.</li>
-      <li>Salaried Employees’ weekly earnings are derived from their monthly salary.</li>
+      <li>A method <code>RobbingClass</code> that prints "MScAI&ML".</li>
+      <li>A default method <code>MachineLearning</code> that prints "I love MachineLearning."</li>
     </ul>
   </li>
-  <li><strong>Bonus Calculation</strong>: Each employee type has a custom bonus calculation method.</li>
-  <li><strong>Data Validation</strong>: Ensures valid inputs for rates, salaries, and hours.</li>
-  <li><strong>Annual Earnings</strong>: Displays annual earnings for each employee type.</li>
-  <li><strong>Payroll Tracking</strong>: Maintains a comprehensive overview of the total payroll.</li>
+  <li><strong>Class <code>JAVAProfessionalRobber</code></strong>: Inherits from <code>Robber</code> and implements the following strategies:
+    <ul>
+      <li><code>RowHouses()</code>: Calculates maximum amount robbed without triggering alarms in adjacent row houses.</li>
+      <li><code>RoundHouses()</code>: Calculates maximum amount robbed in a circular arrangement of houses.</li>
+      <li><code>SquareHouse()</code>: Maximizes amount robbed from square houses without robbing adjacent houses.</li>
+      <li><code>MultiHouseBuilding()</code>: Maximizes amount robbed from a multi-type building where each array represents a separate type of house.</li>
+    </ul>
+  </li>
 </ul>
 
+<h2>Algorithm Summary</h2>
+<p>Each method uses dynamic programming to ensure that no adjacent houses are robbed, maximizing the total robbery amount.</p>
+
+<h3>Method Explanations</h3>
+<ol>
+  <li><strong>RowHouses</strong>: Robs from an array of row houses without robbing two adjacent houses.</li>
+  <li><strong>RoundHouses</strong>: Handles circular houses where the first and last are adjacent.</li>
+  <li><strong>SquareHouse</strong>: Similar to <code>RowHouses</code>, optimizes for non-adjacent square houses.</li>
+  <li><strong>MultiHouseBuilding</strong>: Robs from a multi-type building with each house type treated independently.</li>
+</ol>
+
+<h3>Test Cases</h3>
+<ul>
+  <li><code>RowHouses([1,2,3,0])</code> -> Expected result: 4</li>
+  <li><code>RoundHouses([1,2,3,4])</code> -> Expected result: 6</li>
+  <li><code>SquareHouse([5,10,2,7])</code> -> Expected result: 17</li>
+  <li><code>MultiHouseBuilding([[5,3,8,2], [10,12,7,6], [4,9,11,5], [8,6,3,7]])</code> -> Expected result: 59</li>
+</ul>
